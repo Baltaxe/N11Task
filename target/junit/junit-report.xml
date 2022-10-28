@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="27.741">
+    <testcase classname="N11 Favourite Product Scenario" name="N11 Favourite Product Scenario" time="27.507">
+        <system-out>
+            <![CDATA[When user enters the page url...............................................passed
+And user verifies the main page.............................................passed
+And user login the credentials..............................................passed
+And user should see the dashboard...........................................passed
+And user search for the item................................................passed
+And user verifies the results title for Iphone..............................passed
+And user adds the third product on the second page to the favourites........passed
+And user launches Hesabım>Favorilerim>Listelerim page.......................passed
+And user verifies the Favorilerim page is launched..........................passed
+And user deletes the last added product.....................................passed
+Then user logs out..........................................................passed
+]]>
+        </system-out>
+    </testcase>
+</testsuite>
