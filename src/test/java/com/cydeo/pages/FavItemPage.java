@@ -1,6 +1,7 @@
 package com.cydeo.pages;
 
 import com.cydeo.utilities.Driver;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
@@ -72,9 +73,12 @@ public class FavItemPage {
     }
 
     public static void LogOut() {
-        actions.moveToElement(LoginPage.userAccount).perform();
-        wait.until(ExpectedConditions.elementToBeClickable(logOut));
-        logOut.click();
+
+        actions.moveToElement(LoginPage.userAccount).build().perform();
+
+        wait.until(ExpectedConditions.visibilityOf(logOut));
+        wait.until(ExpectedConditions.elementToBeClickable(logOut)).click();
+
         LoginPage.email.clear();
 
         Driver.closeDriver();

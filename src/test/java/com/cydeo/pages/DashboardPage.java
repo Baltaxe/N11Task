@@ -2,6 +2,7 @@ package com.cydeo.pages;
 
 import com.cydeo.utilities.ConfigurationReader;
 import com.cydeo.utilities.Driver;
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
@@ -10,6 +11,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
 import java.util.List;
 
 public class DashboardPage {
@@ -52,16 +54,17 @@ public class DashboardPage {
         int secondPageThirdItem = FirstPageSize + 3;
         System.out.println(secondPageThirdItem + ". item will be our third item of the second page.");
 
-        actions.sendKeys(Keys.PAGE_DOWN, Keys.PAGE_DOWN, Keys.PAGE_DOWN, Keys.PAGE_DOWN).perform();
-
-        wait.until(ExpectedConditions.visibilityOf(loadingSign));
-
-        String secondPageUrl = Driver.getDriver().getCurrentUrl();
-        System.out.println("Second Page Starts Here :" + secondPageUrl);
+        for (int i = 0; i < secondPageThirdItem; i++) {
+            actions.sendKeys(Keys.PAGE_DOWN).perform();
+            if (loadingSign.isDisplayed()) {
+                String secondPageUrl = Driver.getDriver().getCurrentUrl();
+                System.out.println("Second Page Starts Here :" + secondPageUrl);
+                break;
+            }
+        }
 
         WebElement thirdItem = Driver.getDriver().findElements(By.xpath("//span[@class='followBtn']")).get(secondPageThirdItem - 1);
         wait.until(ExpectedConditions.visibilityOf(thirdItem));
         thirdItem.click();
-
     }
 }
