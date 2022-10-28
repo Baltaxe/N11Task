@@ -13,7 +13,8 @@ import org.junit.runner.RunWith;
                 "rerun:target/rerun.txt",},
         features = "src/test/resources",
         glue = "com/cydeo/stepDefs",
-        dryRun = false
+        dryRun = false,
+        publish = true
 
 )
 public class CukesRunner {

@@ -1,5 +1,6 @@
 Feature: N11 Favourite Product Scenario
 
+  @N11
   Scenario: N11 Favourite Product Scenario
 
     When user enters the page url
