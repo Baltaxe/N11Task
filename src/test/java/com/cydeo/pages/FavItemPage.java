@@ -73,7 +73,7 @@ public class FavItemPage {
     }
 
     public static void LogOut() {
-
+        Driver.getDriver().navigate().refresh();
         actions.moveToElement(LoginPage.userAccount).build().perform();
 
         wait.until(ExpectedConditions.visibilityOf(logOut));
