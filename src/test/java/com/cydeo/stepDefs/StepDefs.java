@@ -19,11 +19,9 @@ public class StepDefs {
 
 
     @When("user enters the page url")
-    public void user_Enters_The_Page_String() {
+    public void user_Enters_The_Page_Url() {
 
-        Driver.getDriver().get(ConfigurationReader.getProperty("url"));
-
-        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
+        HomePage.pageSetup();
     }
 
     @And("user verifies the main page")

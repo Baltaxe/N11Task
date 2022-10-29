@@ -1,5 +1,6 @@
 package com.cydeo.pages;
 
+import com.cydeo.utilities.ConfigurationReader;
 import com.cydeo.utilities.Driver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -18,6 +19,9 @@ public class HomePage {
     @FindBy(xpath = "//span[.='Tümünü Kabul Et']")
     public static WebElement acceptCookieBtn;
 
+    public static void pageSetup() {
+        Driver.getDriver().get(ConfigurationReader.getProperty("url"));
+    }
 
     public static void mainPageVerification() {
         wait.until(ExpectedConditions.visibilityOf(acceptCookieBtn));
