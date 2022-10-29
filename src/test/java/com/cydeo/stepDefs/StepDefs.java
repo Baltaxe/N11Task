@@ -48,8 +48,8 @@ public class StepDefs {
         DashboardPage.searchForItem();
     }
 
-    @And("user verifies the results title for Iphone")
-    public void userVerifiesTheResultsTitleForIphone() {
+    @And("user verifies the results title for the item")
+    public void userVerifiesTheResultsTitleForTheItem() {
         DashboardPage.itemVerification();
     }
 

@@ -8,7 +8,7 @@ Feature: N11 Favourite Product Scenario
     And user login the credentials
     And user should see the dashboard
     And user search for the item
-    And user verifies the results title for Iphone
+    And user verifies the results title for the item
     And user adds the third product on the second page to the favourites
     And user launches Hesabım>Favorilerim>Listelerim page
     And user verifies the Favorilerim page is launched
