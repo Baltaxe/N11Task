@@ -78,7 +78,7 @@ public class FavItemPage {
 
         wait.until(ExpectedConditions.visibilityOf(logOut));
         wait.until(ExpectedConditions.elementToBeClickable(logOut)).click();
-
+        wait.until(ExpectedConditions.elementToBeClickable(LoginPage.signInBtn)).click();
         wait.until(ExpectedConditions.visibilityOf(LoginPage.email)).clear();
 
         Driver.closeDriver();
